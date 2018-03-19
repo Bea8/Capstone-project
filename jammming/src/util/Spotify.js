@@ -51,7 +51,7 @@ export const Spotify = {
     if(!playlistName && !trackURIs) {
       return;
     }
-    let accessToken = this.getAccessToken;
+    let accessToken = this.getAccessToken();
     let headers = {
       Authorization: `Bearer ${accessToken}`
     };
