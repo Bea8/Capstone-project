@@ -50,7 +50,6 @@ export class App extends React.Component {
     .then(() => {
      this.setState({
        playlistName: 'New Playlist',
-       searchResults: [],
        playlistTracks: []
      });
    });
@@ -62,17 +61,7 @@ export class App extends React.Component {
     });
   }
 
-  verify(searchTerm) {
-    if (Spotify.accessToken === null || Spotify.accessToken === '' ) {
-      Spotify.getAccessToken();
-    } else {
-      console.log('Already Verified');
-      Spotify.search(searchTerm);
-    }
-  }
-
   render() {
-    window.onload = this.verify();
     return (
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
